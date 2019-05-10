@@ -50,15 +50,15 @@ class _HomePageState extends State<HomePage> {
         currency['name'],
         style: TextStyle(fontWeight: FontWeight.bold),
       ),
-      subtitle: _getSubtitleText(
+      subtitle: _getSubtitleText(currency['name'],
           currency['price_usd'], currency['percent_change_1h']),
       isThreeLine: true,
     );
   }
 
-  Widget _getSubtitleText(String priceUSD, String percentageChange) {
+  Widget _getSubtitleText(String name,String priceUSD, String percentageChange) {
     TextSpan priceTextWidget = new TextSpan(
-        text: "\$$priceUSD\n", style: TextStyle(color: Colors.black));
+        text: "1 $name = \$$priceUSD\n", style: TextStyle(color: Colors.black));
     String percentageChangeText = "1 hour: $percentageChange%";
     TextSpan percentageChangeTextWidget;
 
